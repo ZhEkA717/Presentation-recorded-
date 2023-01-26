@@ -1,40 +1,205 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<aside class="notes">
+					Hello. My name is Evgeniy Grushevskiy and the theme of my presentation is React.
+				</aside>
+				<h1>React</h1>
+				<img style="width: 150px;" data-src="react.svg" alt="React">
+				<p>
+					<small>Created by Evgeniy Grushevskiy</small>
+				</p>
+
+			</section>
+			<section>
+				<aside class="notes">
+					React is a Javascript library for creating user interfaces, authored by Facebook and Instagram
+					engineers. It’s aimed to solve the challenges involved when developing complex user interfaces with
+					datasets that change over time.
+				</aside>
+				<h1>What is React?</h1>
+				<small class="fragment">React is a JavaScript library for building user interfaces.</small>
+				<img class="fragment" style="width: 600px;"
+					src="https://blog.nuthost.com/wp-content/uploads/2019/07/facegram.png" alt="">
+			</section>
+			<section>
+				<aside class="notes">
+					Thousands of apps are using React.
+					Here you can see a list of largest applications developed with React library.
+				</aside>
+				<h1>Who is using React </h1>
+				<small class="fragment">React is a popular technology using by some large companies as Google, Uber,
+					Twitch, Medium, Sendgrid and etc.</small>
+				<img style="width:600px;" class="fragment" src="https://pbs.twimg.com/media/Eg-48XYVkAEOTi4.jpg" />
+			</section>
+			<section>
+				<aside class="notes">
+					Declarative:
+					React makes it painless to create interactive UIs. Design simple views for each state in your
+					application, and React will efficiently update and render just the right components when your data
+					changes.
+
+					Learn one:
+					We don’t make assumptions about the rest of your technology stack, so you can develop new features
+					in React without rewriting existing code.
+
+					Component-Based:
+					Build encapsulated components that manage their own state, then compose them to make complex UIs.
+					Since component logic is written in JavaScript instead of templates, you can easily pass rich data
+					through your app and keep state out of the DOM.
+				
+					Virtual-DOM:
+					Since it’s not effective to remove and re-render the entire interface every time state data changes,
+					React uses a fast, in-memory and lightweight representation of the DOM called virtual DOM. React
+					basically uses a very optimized algorithm that compares the virtual DOM of the current and the
+					previous state. The difference between them is what actually needs to be changed in the real DOM
+					and React computes the most efficient DOM mutation for you.
+					In React, for each object of the current DOM there is a
+					corresponding VirtualDOM object. VirtualDOM is an object representation of DOM, its lightweight
+					copy.VDOM contains the same properties as DOM, but cannot directly affect what is displayed on the
+					screen.
+					The image below shows the virtual DOM tree and the comparison process.The red circles represent
+					nodes that have changed. These nodes represent user interface elements whose state has been changed.
+					Then the difference between the previous version of the virtual DOM and the current virtual DOM
+					is calculated. Then the entire parent subtree is re-rendered to get an updated user interface.
+					This updated tree is then batch-updated to the actual DOM model.
+				</aside>
+				<section>
+					<h1>React features</h1>
+					<ul class="r-small-text">
+						<li class="fragment">
+							<p>Declarative</p>
+						</li>
+						<li class="fragment">
+							<p>Learn Once, Write Anywhere</p>
+						</li>
+						<li class="fragment">
+							<p>Component-Based</p>
+						</li>
+						<li class="fragment">
+							<p>Virtual Dom</p>
+						</li>
+						<li class="fragment">
+							<p>JSX</p>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Component-Based</h1>
+					<ul class="r-small-text">
+						<li class="fragment">
+							<p>Function components</p>
+						</li>
+						<li class="fragment">
+							<p>Class components</p>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p><small>The simplest way to define a component is to write a JavaScript function:</small></p>
+					<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							function Welcome(props) {
+								return <h1>Hello, {props.name}</h1>;
+							}
+						</code>
+					</pre>
+					<p><small>You can also use an ES6 class to define a component:</small></p>
+					<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							class Welcome extends React.Component {
+								render() {
+								  return <h1>Hello, {this.props.name}</h1>;
+								}
+							}
+						</code>
+					</pre>
+					<p><small>The above two components are equivalent from React’s point of view.</small></p>
+				</section>
+				<section>
+					<h1>Virtual DOM</h1>
+					<!-- <pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							
+						</code>
+					</pre> -->
+					<img src="https://habrastorage.org/getpro/habr/post_images/a24/a2a/a11/a24a2aa1136f517abc80ae25c20f6c8a.png"
+						alt="">
+				</section>
+				<section>
+					<h4>JSX</h4>
+					<div class="fragment">
+						<small>
+							JSX is React extension that allows us to write JavaScript that looks like HTML
+						</small>
+						<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+								class HelloWorld extends React.Component {
+									render() {
+									return (
+										<h1 className='large'>Hello World</h1>
+									);
+									}
+								}
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<small>
+							Simple component creation
+						</small>
+						<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+								const element = <h1>Hello, World!</h1>;
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<small>
+							Component creation with properties
+						</small>
+						<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+								const name = "Jack";
+								const element = <h1>Hello, {name}</h1>;
+						</code></pre>
+					</div>
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
+
+
+
