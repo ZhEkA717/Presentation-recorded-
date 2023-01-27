@@ -31,21 +31,30 @@
 			</section>
 			<section>
 				<aside class="notes">
-					React is a Javascript library for creating user interfaces, authored by Facebook and Instagram
-					engineers. It’s aimed to solve the challenges involved when developing complex user interfaces with
-					datasets that change over time.
+					React is an open source JavaScript library for building user interfaces,authored by Facebook and
+					Instagram
+					Unlike other JavaScript libraries that provide a complete application framework, React focuses on
+					creating application views
+					using components that save state and generate UI elements. You can place a single component on a
+					web page or nest component hierarchies to create a complex user interface.
+
+					React components are often written in JavaScript and JSX , which is a JavaScript extension that is
+					very similar to HTML and includes some functionality to perform tasks, such as registering event
+					handlers for UI elements. The React component implements a render method that returns JSX code that
+					represents the component's user interface.
 				</aside>
-				<h1>What is React?</h1>
+				<h2>What is React?</h2>
 				<small class="fragment">React is a JavaScript library for building user interfaces.</small>
 				<img class="fragment" style="width: 600px;"
 					src="https://blog.nuthost.com/wp-content/uploads/2019/07/facegram.png" alt="">
 			</section>
 			<section>
 				<aside class="notes">
-					Thousands of apps are using React.
-					Here you can see a list of largest applications developed with React library.
+					React is a popular technology using by some large companies as Google, Uber,
+					Twitch, Medium and etc. Thousands of apps are using React. Here you can see a list of largest
+					applications developed with React library.
 				</aside>
-				<h1>Who is using React </h1>
+				<h2>Who is using React?</h2>
 				<small class="fragment">React is a popular technology using by some large companies as Google, Uber,
 					Twitch, Medium, Sendgrid and etc.</small>
 				<img style="width:600px;" class="fragment" src="https://pbs.twimg.com/media/Eg-48XYVkAEOTi4.jpg" />
@@ -61,11 +70,6 @@
 					We don’t make assumptions about the rest of your technology stack, so you can develop new features
 					in React without rewriting existing code.
 
-					Component-Based:
-					Build encapsulated components that manage their own state, then compose them to make complex UIs.
-					Since component logic is written in JavaScript instead of templates, you can easily pass rich data
-					through your app and keep state out of the DOM.
-				
 					Virtual-DOM:
 					Since it’s not effective to remove and re-render the entire interface every time state data changes,
 					React uses a fast, in-memory and lightweight representation of the DOM called virtual DOM. React
@@ -74,7 +78,8 @@
 					and React computes the most efficient DOM mutation for you.
 					In React, for each object of the current DOM there is a
 					corresponding VirtualDOM object. VirtualDOM is an object representation of DOM, its lightweight
-					copy.VDOM contains the same properties as DOM, but cannot directly affect what is displayed on the
+					copy. Virtual DOM contains the same properties as DOM, but cannot directly affect what is displayed
+					on the
 					screen.
 					The image below shows the virtual DOM tree and the comparison process.The red circles represent
 					nodes that have changed. These nodes represent user interface elements whose state has been changed.
@@ -92,18 +97,332 @@
 							<p>Learn Once, Write Anywhere</p>
 						</li>
 						<li class="fragment">
-							<p>Component-Based</p>
-						</li>
-						<li class="fragment">
 							<p>Virtual Dom</p>
-						</li>
-						<li class="fragment">
-							<p>JSX</p>
 						</li>
 					</ul>
 				</section>
 				<section>
-					<h1>Component-Based</h1>
+					<h1>Virtual DOM</h1>
+					<img src="https://habrastorage.org/getpro/habr/post_images/a24/a2a/a11/a24a2aa1136f517abc80ae25c20f6c8a.png"
+						alt="">
+				</section>
+				<section>
+					<small>Compare elements created with React in the Virtual-DOM and elements created in the native
+						Dom tree in the browser.</small>
+					<div style="display: flex; gap: 20px;">
+						<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+							const h1 = document.createElement('h1');
+							console.dir(h1);
+						</code>
+					</pre>
+						<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+							const h1 = <h1>Hello, World!</h1>;
+							console.dir(h1);
+						</code>
+					</pre>
+					</div>
+					<div style="display: flex; gap: 20px;">
+						<pre>
+							<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+								h1 = {
+									accessKey: "",
+									align: "",
+									ariaAtomic: null,
+									ariaAutoComplete: null,
+									ariaBrailleLabel: null,
+									ariaBrailleRoleDescription: null,
+									ariaBusy: null,
+									ariaChecked: null,
+									ariaColCount: null,
+									ariaColIndex: null,
+									ariaColSpan: null,
+									ariaCurrent: null,
+									ariaDescription: null,
+									ariaDisabled: null,
+									ariaExpanded: null,
+									ariaHasPopup: null,
+									ariaHidden: null,
+									ariaInvalid: null,
+									ariaKeyShortcuts: null,
+									ariaLabel: null,
+									ariaLevel: null,
+									ariaLive: null,
+									ariaModal: null,
+									ariaMultiLine: null,
+									ariaMultiSelectable: null,
+									ariaOrientation: null,
+									ariaPlaceholder: null,
+									ariaPosInSet: null,
+									ariaPressed: null,
+									ariaReadOnly: null,
+									ariaRelevant: null,
+									ariaRequired: null,
+									ariaRoleDescription: null,
+									ariaRowCount: null,
+									ariaRowIndex: null,
+									ariaRowSpan: null,
+									ariaSelected: null,
+									ariaSetSize: null,
+									ariaSort: null,
+									ariaValueMax: null,
+									ariaValueMin: null,
+									ariaValueNow: null,
+									ariaValueText: null,
+									assignedSlot: null,
+									attributeStyleMap: StylePropertyMap = {
+										size: 0,
+									},
+									attributes: NamedNodeMap = {
+										length: 0
+									},
+									autocapitalize: "",
+									autofocus: false,
+									baseURI: "http://localhost:8000/#/3/4",
+									childElementCount: 0,
+									childNodes: NodeList=[],
+									children: HTMLCollection=[],
+									classList: DOMTokenList = [{value: ''}],
+									className: "",
+									clientHeight: 0,
+									clientLeft: 0,
+									clientTop: 0,
+									clientWidth: 0,
+									contentEditable: "inherit",
+									dataset: DOMStringMap = {},
+									dir: "",
+									draggable: false,
+									elementTiming: "",
+									enterKeyHint: "",
+									firstChild: null,
+									firstElementChild: null,
+									hidden: false,
+									id: "",
+									inert: false,
+									innerHTML: "",
+									innerText: "",
+									inputMode: "",
+									isConnected: false,
+									isContentEditable: false,
+									lang: "",
+									lastChild: null,
+									lastElementChild: null,
+									localName: "h1",
+									namespaceURI: "http://www.w3.org/1999/xhtml",
+									nextElementSibling: null,
+									nextSibling: null,
+									nodeName: "H1",
+									nodeType: 1,
+									nodeValue: null,
+									nonce: "",
+									offsetHeight: 0,
+									offsetLeft: 0,
+									offsetParent: null,
+									offsetTop: 0,
+									offsetWidth: 0,
+									onabort: null,
+									onanimationend: null,
+									onanimationiteration: null,
+									onanimationstart: null,
+									onauxclick: null,
+									onbeforecopy: null,
+									onbeforecut: null,
+									onbeforeinput: null,
+									onbeforematch: null,
+									onbeforepaste: null,
+									onbeforexrselect: null,
+									onblur: null,
+									oncancel: null,
+									oncanplay: null,
+									oncanplaythrough: null,
+									onchange: null,
+									onclick: null,
+									onclose: null,
+									oncontentvisibilityautostatechange: null,
+									oncontextlost: null,
+									oncontextmenu: null,
+									oncontextrestored: null,
+									oncopy: null,
+									oncuechange: null,
+									oncut: null,
+									ondblclick: null,
+									ondrag: null,
+									ondragend: null,
+									ondragenter: null,
+									ondragleave: null,
+									ondragover: null,
+									ondragstart: null,
+									ondrop: null,
+									ondurationchange: null,
+									onemptied: null,
+									onended: null,
+									onerror: null,
+									onfocus: null,
+									onformdata: null,
+									onfullscreenchange: null,
+									onfullscreenerror: null,
+									ongotpointercapture: null,
+									oninput: null,
+									oninvalid: null,
+									onkeydown: null,
+									onkeypress: null,
+									onkeyup: null,
+									onload: null,
+									onloadeddata: null,
+									onloadedmetadata: null,
+									onloadstart: null,
+									onlostpointercapture: null,
+									onmousedown: null,
+									onmouseenter: null,
+									onmouseleave: null,
+									onmousemove: null,
+									onmouseout: null,
+									onmouseover: null,
+									onmouseup: null,
+									onmousewheel: null,
+									onpaste: null,
+									onpause: null,
+									onplay: null,
+									onplaying: null,
+									onpointercancel: null,
+									onpointerdown: null,
+									onpointerenter: null,
+									onpointerleave: null,
+									onpointermove: null,
+									onpointerout: null,
+									onpointerover: null,
+									onpointerrawupdate: null,
+									onpointerup: null,
+									onprogress: null,
+									onratechange: null,
+									onreset: null,
+									onresize: null,
+									onscroll: null,
+									onsearch: null,
+									onsecuritypolicyviolation: null,
+									onseeked: null,
+									onseeking: null,
+									onselect: null,
+									onselectionchange: null,
+									onselectstart: null,
+									onslotchange: null,
+									onstalled: null,
+									onsubmit: null,
+									onsuspend: null,
+									ontimeupdate: null,
+									ontoggle: null,
+									ontransitioncancel: null,
+									ontransitionend: null,
+									ontransitionrun: null,
+									ontransitionstart: null,
+									onvolumechange: null,
+									onwaiting: null,
+									onwebkitanimationend: null,
+									onwebkitanimationiteration: null,
+									onwebkitanimationstart: null,
+									onwebkitfullscreenchange: null,
+									onwebkitfullscreenerror: null,
+									onwebkittransitionend: null,
+									onwheel: null,
+									outerHTML: "<h1></h1>",
+									outerText: "",
+									ownerDocument: document,
+									parentElement: null,
+									parentNode: null,
+									part: DOMTokenList = [{value: ''}],
+									prefix: null,
+									previousElementSibling: null,
+									previousSibling: null,
+									role: null,
+									scrollHeight: 0,
+									scrollLeft: 0,
+									scrollTop: 0,
+									scrollWidth: 0,
+									shadowRoot: null,
+									slot: "",
+									spellcheck: true,
+									style: CSSStyleDeclaration = {
+										accentColor: '',
+										additiveSymbols: '',
+										alignContent: '',
+										alignItems: '',
+										alignSelf: '',
+										(...)
+									},
+									tabIndex:-1,
+									tagName: "H1",
+									textContent: "",
+									title: "",
+									translate: true,
+									virtualKeyboardPolicy: "", 
+									[[Prototype]]: HTMLHeadingElement
+								}
+							</code>
+					</pre>
+						<pre>
+							<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+								h1 = {
+									$$typeof: Symbol(react.element),
+									key: null,
+									props: {
+										children: 'Hello, World!'
+									},
+									ref: null,
+									type: "h1",
+									_owner: FiberNode = {
+										tag: 0,
+										key: null,
+										stateNode: null,
+										elementType: ƒ,
+										type: ƒ,
+										(...)
+									},
+									_store: {
+										validated: false
+									},
+									_self: undefined,
+									_source: {
+										fileName: 'D:\\test.tsx',
+										lineNumber: 8,
+										columnNumber: 21
+									},
+									[[Prototype]]: Object
+								}
+							</code>
+					</pre>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>React Fundamentals</h2>
+					<ul class="r-small-text">
+						<li class="fragment">
+							<p>Component-Based</p>
+						</li>
+						<li class="fragment">
+							<p>Props</p>
+						</li>
+						<li class="fragment">
+							<p>JSX</p>
+						</li>
+						<li class="fragment">
+							<p>State</p>
+						</li>
+
+					</ul>
+				</section>
+				<section>
+					<aside class="notes">
+						Component-Based:
+						Build encapsulated components that manage their own state, then compose them to make complex
+						UIs.
+						Since component logic is written in JavaScript instead of templates, you can easily pass rich
+						data
+						through your app and keep state out of the DOM.
+					</aside>
+					<h2>Component-Based</h2>
 					<ul class="r-small-text">
 						<li class="fragment">
 							<p>Function components</p>
@@ -114,37 +433,129 @@
 					</ul>
 				</section>
 				<section>
-					<p><small>The simplest way to define a component is to write a JavaScript function:</small></p>
-					<pre>
+					<div>
+						<p><small>The simplest way to define a component is to write a JavaScript function:</small></p>
+						<pre>
 						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
 							function Welcome(props) {
 								return <h1>Hello, {props.name}</h1>;
 							}
 						</code>
 					</pre>
-					<p><small>You can also use an ES6 class to define a component:</small></p>
-					<pre>
+					</div>
+					<div class="fragment">
+						<p><small>You can also use an ES6 class to define a component:</small></p>
+						<pre>
 						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
 							class Welcome extends React.Component {
 								render() {
-								  return <h1>Hello, {this.props.name}</h1>;
+									return <h1>Hello, {this.props.name}</h1>;
 								}
 							}
 						</code>
 					</pre>
-					<p><small>The above two components are equivalent from React’s point of view.</small></p>
+						<p><small>The above two components are equivalent from React’s point of view.</small></p>
+					</div>
 				</section>
 				<section>
-					<h1>Virtual DOM</h1>
-					<!-- <pre>
-						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
-							
+					<h3>Rendering a Component</h3>
+					<div class="fragment">
+						<small>Previously, we only encountered React elements that represent DOM tags:</small>
+						<pre>
+						<code class="javascript"  data-trim contenteditable style="font-size: 16px;">
+							const element = <Welcome name="Sara"/>;
 						</code>
-					</pre> -->
-					<img src="https://habrastorage.org/getpro/habr/post_images/a24/a2a/a11/a24a2aa1136f517abc80ae25c20f6c8a.png"
-						alt="">
+					</pre>
+					</div>
+					<div class="fragment">
+						<small>Elements can also represent user-defined components:</small>
+						<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+							const element = <Welcome name="Sara"/>;
+						</code>
+					</pre>
+					</div>
+					<div class="fragment">
+						<aside class="notes">
+							When React sees an element representing a user-defined component, it passes JSX attributes
+							and children to this component as a single object. We call this object “props”.
+						</aside>
+						<small>For example, this code renders “Hello, Sara” on the page:</small>
+						<pre>
+							<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+								function Welcome(props) {
+									return <h1>Hello, {props.name}</h1>;
+								}
+								
+								const root = ReactDOM.createRoot(document.getElementById('root'));
+								const element = <Welcome name="Sara"/>;
+								root.render(element);
+							</code>
+						</pre>
+					</div>
 				</section>
 				<section>
+					<h3>Composing Component</h3>
+					<p><small>Components can refer to other components in their output. This lets us use the same
+							component abstraction for any level of detail.</small></p>
+					<small>For example, we can create an App component that renders Welcome many times:</small>
+					<pre class="fragment">
+						<code class="javascript" data-trim contenteditable style="font-size: 16px;">
+							function Welcome(props) {
+								return <h1>Hello, {props.name}</h1>;
+							}
+							  
+							function App() {
+								return (
+									<div>
+										<Welcome name="Sara"  />
+										<Welcome name="Cahal" />
+										<Welcome name="Edite" />
+									</div>
+								);
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<aside class="notes">
+						Propses are just arguments that are passed to the component. When React meet JSX attributes, it
+						collects them into one object and passes them to the component. This object is called "props"
+						(props).
+						The props parameter, which is passed to the component function, encapsulates the properties of
+						the object. In particular, the name and age property. When rendering, we can create a set of
+						Hello components, but pass in them different data for name and age. And thus, we get a set of
+						the same type of html markup filled with different data.
+					</aside>
+					<h3>Props</h3>
+					<small>Props is short for “properties”. Props let you customize React components.</small>
+					<small>Props is an immutable, read-only object.</small>
+					<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							function Hello(props) {
+								return <div>
+									<p>Name: {props.name} </p>
+									<p>Age: {props.age}</p>
+								</div>;
+							}
+						</code>
+					</pre>
+					<pre class="fragment">
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							function App() {
+								return  <Hello name='Evgeniy'
+											   age='22' />
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<aside class="notes">
+						This funny tag syntax is neither a string nor HTML.
+						It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React
+						to describe what the UI should look like. JSX may remind you of a template language, but it
+						comes with the full power of JavaScript.
+					</aside>
 					<h4>JSX</h4>
 					<div class="fragment">
 						<small>
@@ -153,9 +564,9 @@
 						<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
 								class HelloWorld extends React.Component {
 									render() {
-									return (
-										<h1 className='large'>Hello World</h1>
-									);
+										return (
+											<h1 className='large'>Hello World</h1>
+										);
 									}
 								}
 						</code></pre>
@@ -177,6 +588,91 @@
 								const element = <h1>Hello, {name}</h1>;
 						</code></pre>
 					</div>
+				</section>
+				<section>
+					<section>
+						<aside class="notes">
+							The state object describes the internal state of the component, it is similar to props
+							except that the state is defined inside the component and is accessible only from the
+							component.If props represents input data that is passed to the component from the outside,
+							then the state stores such objects that are created in the component and completely depend
+							on the component.
+							Also, unlike props, the values in state can be changed.
+							And another important point is that the values from state should be used during rendering.
+							If some object is not used in component rendering, then it makes no sense to save it in
+							state.
+
+						</aside>
+						<h4>State</h4>
+						<small>
+							State is like a component’s personal data storage. State is useful for handling data that
+							changes over time or that comes from user interaction.
+						</small>
+						<pre>
+							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+								class MyComponent extends React.Component (
+									state = {name:'Alex'}
+									changeName = () => {
+										this.setState({name:'Dennis'})
+									}
+									render(){
+										return (
+											<p>Hello {this.state.name}</p>
+										)
+									}
+								)
+							</code>
+						</pre>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h2>Create React App</h2>
+				<small>Create React App is a comfortable environment for learning React, and is the best way to start
+					building a new single-page application in React.</small>
+				<pre>
+					<span style="margin-left: -500px;"><span style="color: green;">npx</span> create-react-app my-app</span>
+					<span style="color: rgb(158, 158, 25); margin-left: -500px;">cd</span> my-app
+					<span style="color: rgb(22, 87, 206); margin-left: -500px;">npm</span> start
+				</pre>
+			</section>
+			<section>
+				<section>
+					<h2>What's in the project?</h2>
+					<img width="600px"
+						src="https://vegibit.com/wp-content/uploads/2019/03/create-react-app-visual-studio-code.png"
+						alt="">
+				</section>
+				<section>
+					<aside class="notes">
+						node_modules/ — this folder contains all the project dependencies, listed in
+						package.json and installed at startup npm install.
+						public/ — the contents of this folder are what you need to render the page with
+						the application
+						src/ — here are all the sources, the files that we will directly
+						change. Perhaps the most important thing that lies here is src/index.js — the entry point of our
+						project.
+
+					</aside>
+					<h2>Project structure</h2>
+					<ul class="r-small-text">
+						<li>node_modules/</li>
+						<li>public/</li>
+						<li>src/</li>
+						<li>src/index.js</li>
+					</ul>
+				</section>
+				<section>
+					<div>src/index.js</div>
+					<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							import React from 'react';
+							import ReactDOM from 'react-dom';
+							import App from './App';
+							import './index.css';
+							ReactDOM.render(<App />, document.getElementById('root'));
+						</code>
+					</pre>
 				</section>
 			</section>
 		</div>
@@ -200,6 +696,3 @@
 </body>
 
 </html>
-
-
-
